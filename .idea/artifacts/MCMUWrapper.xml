@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="MCMUWrapper">
+    <output-path>$USER_HOME$/Google Drive/mcmuwrapper</output-path>
+    <root id="archive" name="MCMUWrapper.jar">
+      <element id="module-output" name="MCMUWrapper" />
+    </root>
+  </artifact>
+</component>

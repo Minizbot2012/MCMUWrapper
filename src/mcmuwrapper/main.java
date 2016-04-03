@@ -10,7 +10,7 @@ public class main {
     public static void main(String[] args) {
         try {
             String ver = getVer();
-            main.saveUrl("mcmu.jar", String.format("https://github.com/end-all-reality/MCMU/releases/download/%s/MCMU.jar", ver));
+            main.saveUrl("mcmu.jar", String.format("https://github.com/TeamEndAllReality/MCMU/releases/download/%s/MCMU.jar", ver));
             File file = new File("mcmu.jar");
             URL url = file.toURI().toURL();
             URL[] urls = new URL[]{url};
@@ -25,7 +25,7 @@ public class main {
 
     public static String getVer() throws Exception {
         StringBuilder result = new StringBuilder();
-        URL url = new URL("https://raw.githubusercontent.com/end-all-reality/MCMU/master/ver");
+        URL url = new URL("https://raw.githubusercontent.com/TeamEndAllReality/MCMU/master/ver");
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
         conn.setRequestMethod("GET");
         BufferedReader rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));

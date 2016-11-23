@@ -11,9 +11,11 @@ public class main {
     public static void main(String[] args) {
         try {
             String inf = main.getURL("https://api.github.com/repos/TeamEndAllReality/MCMU/releases/latest");
-            Pattern pat = Pattern.compile("\"browser_download_url\": \"(.*)\"");
+            Pattern pat = Pattern.compile("\"browser_download_url\":\"(.*?)\"", Pattern.CASE_INSENSITIVE);
             Matcher m = pat.matcher(inf);
-            String dlurl = m.group(0);
+            m.find();
+            String dlurl = m.group(1);
+            System.out.print(dlurl);
             main.saveUrl("mcmu.jar", dlurl);
             File file = new File("mcmu.jar");
             URL url = file.toURI().toURL();
@@ -34,7 +36,7 @@ public class main {
         BufferedReader rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
         String line;
         while ((line = rd.readLine()) != null) {
-            result.append(line);
+            result.append(line+"\n");
         }
         rd.close();
         return result.toString();

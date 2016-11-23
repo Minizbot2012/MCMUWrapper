@@ -1,11 +1,8 @@
 package mcmuwrapper;
 
 import java.io.*;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.net.URLClassLoader;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.net.*;
+import java.util.regex.*;
 
 public class main {
     public static void main(String[] args) {

@@ -12,7 +12,6 @@ public class main {
             Matcher m = pat.matcher(inf);
             m.find();
             String dlurl = m.group(1);
-            System.out.print(dlurl);
             main.saveUrl("mcmu.jar", dlurl);
             File file = new File("mcmu.jar");
             URL url = file.toURI().toURL();

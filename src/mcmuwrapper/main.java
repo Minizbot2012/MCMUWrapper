@@ -2,6 +2,8 @@ package mcmuwrapper;
 
 import java.io.*;
 import java.net.*;
+import java.util.jar.Attributes;
+import java.util.jar.Manifest;
 import java.util.regex.*;
 
 public class main {
@@ -12,9 +14,12 @@ public class main {
             Matcher m = pat.matcher(inf);
             m.find();
             String dlurl = m.group(1);
-            URL[] urls = new URL[]{new URL(dlurl)};
-            URLClassLoader cl = new URLClassLoader(urls);
-            Class cls = cl.loadClass("mcmu.MCMU");
+            URL jarURL = new URL(dlurl);
+            JarURLConnection conn = (JarURLConnection) (new URL(jarURL, "jar:"+dlurl+"!/").openConnection());
+            Manifest mf = conn.getManifest();
+            ClassLoader cl = URLClassLoader.newInstance(new URL[] {jarURL}, main.class.getClassLoader());
+            Attributes attr = mf.getMainAttributes();
+            Class cls = cl.loadClass(attr.getValue(Attributes.Name.MAIN_CLASS));
             cls.newInstance();
         }
         catch (Exception file) {

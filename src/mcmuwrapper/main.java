@@ -19,7 +19,7 @@ public class main {
             Manifest mf = conn.getManifest();
             ClassLoader cl = URLClassLoader.newInstance(new URL[] {jarURL}, main.class.getClassLoader());
             Attributes attr = mf.getMainAttributes();
-            Class cls = cl.loadClass(attr.getValue(Attributes.Name.MAIN_CLASS));
+            Class cls = Class.forName(attr.getValue(Attributes.Name.MAIN_CLASS), true, cl);
             cls.newInstance();
         }
         catch (Exception file) {

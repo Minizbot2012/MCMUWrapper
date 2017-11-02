@@ -50,8 +50,8 @@
         </dependency>
     </dependencies>
     <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
-    <groupId>groupId</groupId>
-    <artifactId>MCMUWrapper</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <groupId>URLWrapper</groupId>
+    <artifactId>URLWrapper</artifactId>
+    <version>1.0</version>
     
 </project>

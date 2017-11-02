@@ -11,7 +11,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="MCMUWrapper" target="1.5" />
+      <module name="MCMUWrapper" target="1.8" />
       <module name="URLWrapper" target="1.8" />
     </bytecodeTargetLevel>
   </component>

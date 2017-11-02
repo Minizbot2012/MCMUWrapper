@@ -45,15 +45,16 @@ public class Wrapper {
             Gson gson = new Gson();
             WrapperObject urls = gson.fromJson(d, WrapperObject.class);
             URLClassLoader cl = bootstrapJar(urls.getURLs());
-            Class klass = Class.forName(urls.getMainClass(), false, cl);
+            Class klass = Class.forName(urls.getMainClass(), true, cl);
             klass.newInstance();
+            cl.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
 
     }
     public URLClassLoader bootstrapJar(URL jfs[]) throws NoSuchMethodException {
-        return URLClassLoader.newInstance(jfs, getClass().getClassLoader());
+        return new URLClassLoader(jfs, Wrapper.class.getClassLoader());
     }
 
 

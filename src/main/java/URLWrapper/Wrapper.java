@@ -53,7 +53,7 @@ public class Wrapper {
 
     }
     public URLClassLoader bootstrapJar(URL jfs[]) throws NoSuchMethodException {
-        return new URLClassLoader(jfs);
+        return new URLClassLoader(jfs, Wrapper.class.getClassLoader());
     }
 
 

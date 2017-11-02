@@ -27,7 +27,7 @@ public class Wrapper {
             int i = 0;
             this.urls.forEach(url-> {
                 try {
-                    urlArray[i] = new URL(url);
+                    urlArray[i] = new URL("jar", "", url+"!/");
                 } catch (MalformedURLException e) {
                     System.out.println("[Error] on URL: "+url);
                 }
@@ -45,7 +45,7 @@ public class Wrapper {
             Gson gson = new Gson();
             WrapperObject urls = gson.fromJson(d, WrapperObject.class);
             URLClassLoader cl = bootstrapJar(urls.getURLs());
-            Class klass = Class.forName(urls.getMainClass(), true, cl);
+            Class klass = Class.forName(urls.getMainClass(), false, cl);
             klass.newInstance();
             cl.close();
         } catch (Exception e) {

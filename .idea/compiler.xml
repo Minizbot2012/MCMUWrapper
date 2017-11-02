@@ -7,10 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="MCMUWrapper" />
+        <module name="URLWrapper" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="MCMUWrapper" target="1.5" />
+      <module name="URLWrapper" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

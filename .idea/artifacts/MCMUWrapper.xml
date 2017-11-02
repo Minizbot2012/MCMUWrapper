@@ -2,7 +2,7 @@
   <artifact type="jar" build-on-make="true" name="MCMUWrapper">
     <output-path>$PROJECT_DIR$/builds</output-path>
     <root id="archive" name="MCMUWrapper.jar">
-      <element id="module-output" name="MCMUWrapper" />
+      <element id="module-output" name="URLWrapper" />
     </root>
   </artifact>
 </component>

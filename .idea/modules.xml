@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/MCMUWrapper.iml" filepath="$PROJECT_DIR$/MCMUWrapper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/URLWrapper.iml" filepath="$PROJECT_DIR$/URLWrapper.iml" />
     </modules>
   </component>
 </project>
